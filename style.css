@@ -1,0 +1,86 @@
+.scrolled-down {
+  transform: translateY(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.scrolled-up {
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+.autohide {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+}
+
+#first {
+  padding: 0rem;
+}
+
+.open {
+  color: green !important;
+}
+
+.close {
+  color: red !important;
+}
+
+@media (max-width: 992px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 56px;
+    right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 75%;
+    height: 100vh;
+    background-color: rgb(214, 214, 214);
+  }
+
+  .navbar-collapse.collapsing {
+    right: -75%;
+    transition: height 0s ease;
+  }
+
+  .navbar-collapse.show {
+    right: 0;
+    transition: right 300ms ease-in-out;
+  }
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: right 500ms ease-in-out;
+  }
+
+  body {
+    padding-top: 56px !important;
+  }
+}
+
+.scrollable-place {
+  height: 3000px;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  #navOpen {
+    display: none;
+  }
+
+  #bulletPointMob {
+    display: none;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+}
+
+.dropdown-menu {
+  right: 0;
+}
