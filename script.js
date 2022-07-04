@@ -23,12 +23,21 @@ document.addEventListener("DOMContentLoaded", function () {
     var last_scroll_top = 0;
     window.addEventListener("scroll", function () {
       let scroll_top = window.scrollY;
-      if (scroll_top < last_scroll_top) {
-        el_autohide.classList.remove("scrolled-down");
-        el_autohide.classList.add("scrolled-up");
+      if (scroll_top > 0) {
+        $("#navbar").removeClass("marginTop");
+        $("#navbar").addClass("noMarginTop");
       } else {
-        el_autohide.classList.remove("scrolled-up");
-        el_autohide.classList.add("scrolled-down");
+        $("#navbar").removeClass("noMarginTop");
+        $("#navbar").addClass("marginTop");
+      }
+      if (scroll_top > 800) {
+        if (scroll_top < last_scroll_top) {
+          el_autohide.classList.remove("scrolled-down");
+          el_autohide.classList.add("scrolled-up");
+        } else {
+          el_autohide.classList.remove("scrolled-up");
+          el_autohide.classList.add("scrolled-down");
+        }
       }
       last_scroll_top = scroll_top;
     });

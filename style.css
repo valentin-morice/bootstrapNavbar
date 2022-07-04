@@ -1,10 +1,11 @@
 .scrolled-down {
   transform: translateY(-100%);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
+
 .scrolled-up {
   transform: translateY(0);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
 }
 
 .autohide {
@@ -21,8 +22,21 @@
   color: green !important;
 }
 
+.marginTop {
+  margin-top: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.noMarginTop {
+  margin-top: 0px;
+}
+
 .close {
   color: red !important;
+}
+
+body {
+  padding-top: 0px !important;
 }
 
 @media (max-width: 992px) {
@@ -53,7 +67,11 @@
   }
 
   body {
-    padding-top: 56px !important;
+    padding-top: 0px !important;
+  }
+
+  .marginTop {
+    margin-top: 0px;
   }
 }
 
